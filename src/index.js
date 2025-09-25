@@ -11,7 +11,7 @@ const server = http.createServer((request, response) => {
     if (userName && userName.trim() !== "") {
       response.statusCode = 200;
       response.setHeader("Content-Type", "text/plain");
-      response.end(`Hello, ${userName}.`);
+      response.end(`Hello, ${userName}!`);
     } else {
       response.statusCode = 400;
       response.setHeader("Content-Type", "text/plain");
@@ -28,7 +28,7 @@ const server = http.createServer((request, response) => {
   } else if (request.url === "/") {
     response.status = 200;
     response.statusMessage = "OK";
-    response.header = "Content-Type: application/json";
+    response.header = "Content-Type: text/plain";
     response.write("Hello, World!");
     response.end();
     return;
